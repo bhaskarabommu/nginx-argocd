@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: nginx-custom
-        image: bhaskar093/nginx-custom:1.0
+        image: bhaskar093/nginx-custom:0.1
         ports:
         - containerPort: 80
