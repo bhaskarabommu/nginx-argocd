@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  namespace: nginx-prod
+  labels:
+    app: nginx-custom
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx-custom
+  template:
+    metadata:
+      labels:
+        app: nginx-custom
+    spec:
+      containers:
+      - name: nginx-custom
+        image: bhaskar0093/nginx-custom:1.0
+        ports:
+        - containerPort: 80
